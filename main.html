@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="main-section">
+
+        <h1> Test POP okna</h1>
+
+        <button id="openModalBtn">Open Modal</button>
+
+        <!-- The Modal 1 start-->
+        <div id="popModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Doporučujeme v sestavě</h2>
+                </div>
+                <div class="save-info">Ušetříte 1000 Kč</div>
+                <div class="modal-body">
+                     <!-- Modal product 1 -->   
+                    <div class="modal-product">
+                        
+                        <div class="modal-product-heading">
+                            <h2>Wykrywacz metali Nikta Simplex Lite</h2>
+                           
+                        </div>
+                      
+                        <div class="modal-product-img">
+                            <img src="./IMG/wykrywacz.png" alt="kartacek_01">
+                            
+
+                        </div>
+
+
+                        <div class="modal-product-button">
+                            <p class="product-price old-price">1096,00 zl</p>
+                            <p class="product-price-new new-price">999,00 zl</p>
+                            
+                        </div>
+                        <p class="product-pieces">Sztuk: 1</p>
+
+                    </div>
+                      <!-- Modal product 2 -->   
+                    <div class="modal-product">
+                        <div class="modal-product-heading">
+                            <h2>
+                                <span class="icon-text">/4</span> skladna Badger Outdoor US Army
+                              </h2>
+                           
+                        </div>
+                        <div class="modal-product-img">
+                            <img src="./IMG/saperka.png" alt="kartacek_01">
+                           
+                        </div>
+
+
+                       <div class="modal-product-button">
+                            <p class="product-price">79,99 zl</p>                       
+                          
+                        </div>
+                        <p class="product-pieces">Sztuk: 1</p>
+
+                    </div>
+                        <!-- Modal product 3 -->  
+                          
+                    <div class="modal-product">
+                        <div class="modal-product-heading">
+                           
+                            <h2>
+                                <span class="icon-text">2/4</span> Nozolopatka Swagier
+                              </h2>
+                          
+                        </div>
+
+                        <div class="modal-product-img">
+                            <img src="./IMG/nozolopatka.png" alt="kartacek_01">
+                           
+
+                        </div>
+
+
+                        <div class="modal-product-button">
+                            <p class="product-price">155,00 zl</p>
+                            
+                          
+                        </div>
+                        <p class="product-pieces">Sztuk: 1</p>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <h3>Modal Footer</h3> -->
+                     <div class="footer-info">
+                        <h4>Dodání ihned</h4>
+                        <h4>Doprava zdarma</h4>
+                     </div>
+
+                     <div class="footer-info-price">
+                        <p>1750 Kč</p>                        
+                        <h4 class="info-price-bold"> 750 Kč</h4>
+                     </div>
+                    
+                    <input type="button" class="buy-button" value="KOUPIT"></input>
+                </div>
+               
+            </div>
+        </div>
+    
+         <!-- Modal 1 end -->
+
+    </div>
+
+
+
+
+</body>
+<script src="./JS/modal.js"></script>
+
+</html>

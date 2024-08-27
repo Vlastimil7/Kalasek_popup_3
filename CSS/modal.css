@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  text-align: center;
+
+}
+
+#openModalBtn {
+  margin-top: 50px;
+  padding: 15px 25px;
+  border: none;
+  background-color: orange;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 10px 10px 8px grey;
+
+}
+
+#openModalBtn:hover {
+
+  background-color: rgb(60, 255, 0);
+
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 600px;
+  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 5px 10px;
+  height: 35px;
+  background-color: #626362;
+  color: white;
+  text-align: center;
+
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  padding: 2px 16px;
+  margin-top: 20px;
+  gap: 15px;
+
+
+}
+
+.modal-product {
+  position: relative;
+  width: 190px;
+  /* height: 330px; */
+  text-align: center;
+  align-items: center;
+  padding: 10px;  
+  border-right: 2px solid #f0f0f0; /* Světle šedý okraj na pravé straně */
+  transition: transform 0.3s ease; /* Přidání animace pro zvětšení při hoveru */
+  overflow: hidden;
+
+}
+
+.modal-product::before {
+  content: "+";
+  position: absolute;
+  right: -4px; /* Umístění "+" přesně na hranici boxu */
+  top: 50%;
+  transform: translateY(-50%); /* Vertikální vycentrování "+" */
+  font-size: 24px; /* Zvětšená velikost symbolu "+" */
+  color: orange;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 5px 7px; /* Přidání mezer nahoře a dole */
+  line-height: 1; /* Zajistí, že "+" nebude mít extra výšku */
+  transition: transform 0.3s ease; /* Animace zvětšení "+" při hoveru */
+}
+
+.modal-product:hover {
+  transform: scale(1.05); /* Zvětšení celého boxu při hoveru */
+  border-right: 5px solid #f0f0f0; /* Světle šedý okraj na pravé straně */
+}
+
+.modal-product:hover::before {
+  transform: translateY(-50%) scale(1.5); /* Zvětšení "+" při hoveru */
+  font-weight: 700; /* Zvětšení tloušťky symbolu "+" při hoveru */
+ 
+ 
+
+}
+
+
+.modal-product-img {
+  position: relative;
+}
+
+
+
+.modal-product-heading h2 {
+  margin-top: 15px;
+  font-size: 12px;
+  height: 35px;
+
+}
+
+.modal-product-heading p {
+  margin-top: 5px;
+
+}
+
+.icon-text {
+  color: #888;
+  align-items: center;
+}
+
+.icon-text::after {
+  content: "\f00c"; /* Unicode pro ikonu "check" z Font Awesome */
+  font-family: 'Font Awesome 6 Free'; /* Použití Font Awesome */
+  font-weight: 900; /* Zajistí, že ikona bude v tučném stylu */
+  margin-left: 5px; /* Mezery mezi textem "/4" a ikonou */
+  font-size: 1em; /* Velikost ikony */
+  background-color: #000;
+  color: white;
+  padding: 2px;
+}
+
+.modal-product-img img {
+  width: 150px;
+  height: 150px;
+  padding: 10px 10px;
+
+}
+
+.modal-product-button input[type="button"] {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 8px 20px;
+  color: white;
+  background-color: orange;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-product-button {
+ height: 30px;
+}
+
+.product-price {
+ font-weight: bold;
+ text-align: center;
+}
+
+.old-price {
+  text-decoration: line-through;
+  margin-right: 2px; /* Mezera mezi cenami */
+  color: gray; /* Barva přeškrtnuté ceny */
+}
+
+.new-price {
+  color: #c40000; /* Barva nové ceny */
+  font-weight: bold; /* Zvýraznění nové ceny */
+}
+
+.product-pieces{
+
+  color: #888;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+
+
+
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: white;
+  padding: 5px;
+  padding-right: 13px;
+  padding-bottom: 15px;
+}
+
+.footer-info{
+
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  text-align: left;
+
+
+}
+
+.info-price-bold{
+
+font-weight: bold;
+font-size: 20px;
+}
+.buy-button{
+
+  margin-left: 40px;
+  border: none;
+  background-color: #ffb72d ;
+  padding: 10px 20px;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.save-info {
+  position: absolute;
+  top: 30px; /* Umístění od horního okraje */
+  right: 50px; /* Umístění od pravého okraje */
+  background-color: red; /* Barva pozadí */
+  color: #000; /* Barva textu */
+  padding: 5px 10px; /* Vnitřní odsazení */
+  border-radius: 3px; /* Zaoblení rohů */
+  font-size: 19px; /* Velikost písma */
+  font-weight: bold; /* Tučný text */
+  z-index: 1000; /* Zajišťuje, že bude text nad ostatním obsahem */
+  transform: rotate(20deg); /* Natočení textu o -45° */
+  transform-origin: bottom right; /* Ujistí se, že text se otáčí kolem pravého dolního rohu */
+  white-space: normal; /* Umožní textu zalamování */
+  max-width: 100px; /* Maximální šířka, aby se text nezabral */
+  text-align: center; /* Vycentruje text */
+  color: white;
+}
+
+
+@media screen and (max-width: 600px) {
+  .modal-body {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 2px 5px;
+
+  }
+
+  .modal-header{
+
+    height: 45px;
+
+  }
+ .modal-header h2{
+    font-size: 18px;
+    
+
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 1100px;
+  }
+
+  .modal {
+    padding-top: 0px;
+  }
+
+  .modal-product{
+
+    width: 100%;
+
+  }
+  .save-info {
+   
+    top: 60px;
+    right: 20px;   
+    font-size: 15px;   
+    max-width: 80px;
+    transform: rotate(10deg);
+   
+}
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: white;
+  padding: 5px;
+  padding-right: 13px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 0px;
+  text-align: center;
+  margin-bottom: 8px;
+
+}
+
+.buy-button {
+  margin-top: 8px;
+  margin-left: 0px;
+  
+}
+
+}
